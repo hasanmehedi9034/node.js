@@ -13,7 +13,10 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/students', (req, res) => {
-
+    db.getDbStudents()
+        .then(students => {
+            res.send(students)
+        })
 })
 
 app.post('/api/students', (req, res) => {
@@ -26,6 +29,17 @@ app.post('/api/students', (req, res) => {
                     res.send(student)
                 })
         })
+})
+
+app.get('/api/students/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    
+    db.getDbStudents()
+    .then(students => {
+        const student = students.find(s => s.id === id);
+        if (!student) res.status(404).send('No student found');
+        else res.send(student)
+    })
 })
 
 const port = 3000;
