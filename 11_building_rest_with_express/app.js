@@ -14,6 +14,7 @@
 // console.log('Listening on port 300...')
 
 const express = require('express');
+const fs = require('fs');
 
 const app = express();
 
@@ -21,12 +22,11 @@ app.get('/', (request, response) => {
     response.send("Hello from express js!");
 })
 
-app.get('/another', (request, response) => {
-    response.send("I am another response")
-})
-
-app.get('/student', (request, response) => {
-    response.send(JSON.stringify(['Mehedi', 'Hasan']))
+app.get('/api/students', (req, res) => {
+    fs.readFile('./db.json', 'utf-8', (err, data) => {
+        const students = JSON.parse(data).students;
+        res.send(students);
+    })
 })
 
 const port = 3000;
