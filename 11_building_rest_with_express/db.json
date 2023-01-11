@@ -1,16 +1,22 @@
-{
-    "students": [
-        {
-            "id": 1,
-            "name": "Karim"
-        },
-        {
-            "id": 2,
-            "name": "Rahim"
-        },
-        {
-            "id": 3,
-            "name": "Eti"
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "name": "Karim"
+    },
+    {
+        "id": 2,
+        "name": "Rahim"
+    },
+    {
+        "id": 3,
+        "name": "Eti"
+    },
+    {
+        "id": 4,
+        "name": "israt eti"
+    },
+    {
+        "id": 5,
+        "name": "Mehedi"
+    }
+]
