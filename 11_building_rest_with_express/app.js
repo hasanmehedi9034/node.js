@@ -60,6 +60,24 @@ app.put('api/students/:id', (req, res) => {
         })
 })
 
+app.delete('/api/students/:id', (req, res) => {
+    const id = req.params.id;
+
+    db.getDbStudents()
+        .then(students => {
+            const student = students.find(s => s.id === id);
+            
+            if (!student) res.status(404).send("Student Not founded")
+            
+            const updated_students = students.filter(s => s.id != id);
+
+            db.insertDbStudent(updated_students)
+                .then(msg => {
+                    res.send("hello")
+                })
+        })
+})
+
 const port = 3000;
 
 app.listen(port, () => {
