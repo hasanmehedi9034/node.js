@@ -41,6 +41,7 @@ const studentDetail = (req, res) => {
 const studentUpdate = (req, res) => {
     const id = parseInt(req.params.id);
     const updatedData = req.body;
+    console.log(updatedData)
 
     db.getDbStudents()
         .then(students => {
@@ -83,15 +84,16 @@ const showStudents = (req, res) => {
 
 app.get('/', showStudents)
 
-app.get('/api/students', studentList)
+app.route('/api/students')
+    .get(studentList)
+    .post(newStudent)
 
-app.post('/api/students', newStudent)
 
-app.get('/api/students/:id', studentDetail)
+app.route('/api/students/:id')
+    .get(studentDetail)
+    .put(studentUpdate)
+    .delete(studentDelete)
 
-app.put('api/students/:id', studentUpdate)
-
-app.delete('/api/students/:id', studentDelete)
 
 const port = 3000;
 
