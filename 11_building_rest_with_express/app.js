@@ -4,6 +4,8 @@ const studentRouter = require('./routers/studentRouter')
 const app = express();
 
 app.use(express.json()) // POST-> json object -> req.body
+app.use(express.urlencoded({ extended: true }))
+app.use(express.static('public'));
 
 app.use((req, res, next) => {
     console.log('I am middleware 1!');
@@ -18,7 +20,7 @@ app.use((req, res, next) => {
 app.use('/api/students', studentRouter)
 
 app.get('/about', () => {
-    
+
 })
 
 app.route('/')
