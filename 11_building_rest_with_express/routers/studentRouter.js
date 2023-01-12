@@ -79,9 +79,6 @@ const showStudents = (req, res) => {
 }
 
 router.route('/')
-    .get(showStudents)
-
-router.route('/')
     .get(studentList)
     .post(newStudent)
 
