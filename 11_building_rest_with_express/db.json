@@ -1,14 +1,1 @@
-[
-    {
-        "id": 3,
-        "name": "Eti"
-    },
-    {
-        "id": 4,
-        "name": "israt eti"
-    },
-    {
-        "id": 5,
-        "name": "Mehedi"
-    }
-]
+[{"id":3,"name":"Eti"},{"id":4,"name":"israt eti"},{"id":5,"name":"Mehedi"},{"id":1,"name":"Pritom"}]
