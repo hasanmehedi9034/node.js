@@ -17,6 +17,10 @@ app.use((req, res, next) => {
 
 app.use('/api/students', studentRouter)
 
+app.get('/about', () => {
+    
+})
+
 app.route('/')
     .get((req, res) => {
         console.log('I am get request Middleware')
