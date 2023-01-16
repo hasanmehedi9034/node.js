@@ -49,6 +49,21 @@ async function createStudent() {
         console.error(err._message);
     }
 }
-createStudent();
+// createStudent();
 
+
+// Read
+async function readStudents() {
+    // const studentData = await Student.find({ firstName: 'Karim' });
+    
+    const studentData = await Student
+        .find({ firstName: "Karim" })
+        .limit(3)
+        .sort({ firstName: 1 })
+        .select({ firstName: 1, lastName: 1, hobbies: 1 })
+
+    // const studentData = await Student.find();
+    console.log(studentData);
+}
+readStudents();
 
