@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Student } = require('./students');
+const { Student } = require('../models/students');
 
 const studentList = (req, res) => {
 
